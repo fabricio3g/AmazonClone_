@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/*   
+ *	VARIABLES FOR COLORS
+ *   
+ */
+
+:root {
+    --background-grey: #203040;
+    --font-color-white: #ffffff;
+    --main-color: #f08040;
+}
+
+html {
+    font-size: 62%;
+}
+
+body {
+    height: 100vh;
+    font: 1.6rem Helvetica, Arial;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
+}
+
+
+/*  NAVBAR STYEL */
+
+header {
+    grid-area: header;
+    background-color: var(--background-grey);
+    color: var(--font-color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+header a {
+    color: var(--font-color-white);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: var(--main-color);
+}
+
+.brand a {
+    font-size: 3rem;
+}
+
+
+/*
+ANCRO HOVER
+*/
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+
+/**/
+
+
+/*  FOOTER STYLE */
+
+footer {
+    background-color: var(--background-grey);
+    display: flex;
+    justify-content: center;
+    color: var(--font-color-white);
+    align-items: center;
+    border-radius: 5rem 5rem 0rem 0rem;
+}
+
+
+/*  PRODUCT CARD */
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.products li {
+    flex: 0 1 30rem;
+    margin: 1rem;
+    margin-bottom: .3rem;
+    height: 42rem;
+    border-top: 1rem var(--background-grey) solid;
+    border-bottom: 1rem var(--background-grey) solid;
+    border-radius: 1rem 1rem 0rem 0rem;
+    /* SHADOWS */
+    -webkit-box-shadow: 0px -2px 18px -9px rgba(0, 0, 0, 0.91) !important;
+    -moz-box-shadow: 0px -2px 18px -9px rgba(0, 0, 0, 0.91) !important;
+    box-shadow: 0px -2px 18px -9px rgba(0, 0, 0, 0.91) !important;
+    width: 30rem;
+}
+
+.product {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.product a img {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    max-height: 26rem;
+    max-width: 20rem;
+    margin-top: 2rem;
+    transition: .3s ease-out;
+}
+
+.product a img:hover {
+    transition: .3s ease-in;
+    transform: scale(1.1);
+}
+
+.product-name {
+    font-size: 2rem;
+}
+
+.product-brand {
+    font-size: 1.5rem;
+    color: grey;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: bold;
+}
