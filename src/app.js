@@ -1,7 +1,7 @@
 import HomeScreen from "./screens/HomeScreen.js"
 import ProductScreen from "./screens/ProductScreen.js"
 import { parseRequestUrl } from "./utils.js"
-
+import Error404Screen from "./screens/Error404Screen.js"
 
 
 
@@ -21,13 +21,18 @@ const routes = {
 
 const  router =() => {
 
-	const request = parseRequestUrl
+	const request = parseRequestUrl()
 
-	const parseUrl = (request.resource ? `/${request.resource}` : `/`) + (request.id)
+
+	const parseUrl = (request.resource ? `/${request.resource}` : `/`) + 
+	(request.id ? `:/id` : '' ) + 
+	(request.verb ? `${request.verb}` : '' )
+
+	const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen
 
 	const main = document.querySelector("#main_container")
 
-	main.innerHTML = HomeScreen.render()
+	main.innerHTML = screen.render()
 }
 
 
