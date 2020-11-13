@@ -6,6 +6,7 @@ import data from "../data.js"
 	 
 
 	render: () =>{
+		
 		const { products } = data
 
 		return`
