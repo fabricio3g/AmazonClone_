@@ -24,10 +24,8 @@ const  router =() => {
 	const request = parseRequestUrl()
 
 
-	const parseUrl = (request.resource ? `/${request.resource}` : `/`) + 
-	(request.id ? `:/id` : '' ) + 
-	(request.verb ? `${request.verb}` : '' )
-
+	const parseUrl = (request.resource ? `/${request.resource}/` : '/') + (request.id ? `:id` : '' ) + (request.verb ? `/${request.verb}` : '' )
+	console.log(parseUrl)
 	const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen
 
 	const main = document.querySelector("#main_container")
@@ -37,3 +35,4 @@ const  router =() => {
 
 
 window.addEventListener("load", router)
+window.addEventListener("hashchange", router)
