@@ -1,15 +1,23 @@
 {
-  "name": "front_end",
+  "name": "amazonjs_frontend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server src --verbose",
+    "start": "node backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricio3g/AmazonJs_frontend.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "live-server": "^1.2.1"
+  "bugs": {
+    "url": "https://github.com/fabricio3g/AmazonJs_frontend/issues"
+  },
+  "homepage": "https://github.com/fabricio3g/AmazonJs_frontend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
